@@ -11,13 +11,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-<<<<<<< HEAD
-    "react-bootstrap": "^2.9.0",
-    "react-dom": "^18.2.0"
-=======
     "react-dom": "^18.2.0",
+    "styled-components": "^6.0.8",
+    "tslib": "^2.6.2",
     "typeit-react": "^2.6.4"
->>>>>>> origin/Front-end
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
