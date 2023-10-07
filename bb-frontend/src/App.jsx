@@ -31,8 +31,8 @@ function App() {
 
 
 <div className="logo">
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo" alt="React logo" />
+        <a href="https://devpost.com/software/bytebucks" target="_blank">
+          <img src={'/BB_Logo.png'} className="logo" alt="ByteBucks Logo" />
         </a>
       </div>
       
