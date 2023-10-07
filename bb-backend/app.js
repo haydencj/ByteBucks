@@ -1,8 +1,13 @@
-const express = require('express')
+// Imports
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+
+// Custom imports
+const config = require('./utils/config');
+const authRoutes = require('./routes/auth');
+
 const app = express()
-const cors = require('cors')
-const mongoose = require('mongoose')
-const config = require('./utils/config')
 
 mongoose.set('strictQuery', false)
 
@@ -14,7 +19,12 @@ mongoose.connect(config.MONGODB_URI)
     console.log(error.message)
   })
 
-app.use(cors())
-app.use(express.json())
+// Middlewares
+app.use(cors()); // Handle CORS issues
+app.use(express.json()); // For parsing JSON requests
+app.use('/api/auth', authRoutes);
+
+// Routes
+
 
 module.exports = app

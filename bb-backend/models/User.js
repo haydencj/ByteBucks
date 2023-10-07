@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const uniqueValidator = require('mongoose-unique-validator')
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -12,22 +12,16 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     byteBucksId: String, // To store Hedera account ID associated with the user
-    // ... any other fields you want to include
+    byteBucks: Number
 });
 
-userSchema.plugin(uniqueValidator)
-
-userSchema.set('toJSON', {
-  transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id.toString()
-    delete returnedObject._id
-    delete returnedObject.__v
-
-    // PWH should not be revealed
-    delete returnedObject.passwordHash
-  }
-})
-
+// Hash password before saving
+userSchema.pre('save', async function (next) {
+    if (this.isModified('password')) {
+        this.password = await bcrypt.hash(this.password, 12);
+    }
+    next();
+});
 
 const User = mongoose.model('User', userSchema)
 module.exports = User
