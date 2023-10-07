@@ -2,15 +2,18 @@ const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
 const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    minLength: 8,
-    required: true,
-    unique: true
-  },
-  name: String,
-  passwordHash: String
-})
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    byteBucksId: String, // To store Hedera account ID associated with the user
+    // ... any other fields you want to include
+});
 
 userSchema.plugin(uniqueValidator)
 
@@ -25,6 +28,6 @@ userSchema.set('toJSON', {
   }
 })
 
-const User = mongoose.model('User', userSchema)
 
+const User = mongoose.model('User', userSchema)
 module.exports = User
