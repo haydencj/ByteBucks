@@ -1,9 +1,10 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import OpenWalletButton from './components/OpenWalletbutton'
 import React, { useState, useEffect } from 'react';
 import './App.css'
 import AnimatedComponent from './components/AnimatedComponent';
+import TypeIt from "typeit-react";
+
 
 function App() {
   const [showTitle, setShowTitle] = useState(false);
@@ -20,11 +21,64 @@ function App() {
     };
   }, []); // Empty dependency array to run the effect only once
 
-
+  const SuperStrong = ({ children }) => {
+    return <strong style={{ fontSize: "70px", className:"glitch" }}>{children}</strong>;
+  };
 
   return (
-    <div className="App">
-      <h1
+   
+    <div className="app-container">
+
+
+<div className="logo">
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo" alt="React logo" />
+        </a>
+      </div>
+      
+      
+      <div className="content">
+
+        <div className="content-item">
+      <TypeIt>
+        <SuperStrong>Welcome to
+          ByteBucks.
+        </SuperStrong>
+      </TypeIt>
+      </div>
+
+      
+        
+    <AnimatedComponent>
+      <div className="content-item">
+    <div className="text-field">
+        <label htmlFor="username">Username:</label>
+        <input type="text" id="username" name="username" />
+      </div>
+      </div>
+      <div className="content-item">
+      <div className="text-field">
+        <label htmlFor="password">Password:</label>
+        <input type="password" id="password" name="password" />
+      </div>
+      </div>
+      <div className="content-item">
+      <button>
+       Sign in
+      </button>
+      </div>
+      </AnimatedComponent>
+     {/* <Login/> */}
+
+     </div>
+     
+    </div>
+
+  );
+}
+
+
+{/* <div
         className={`title ${showTitle ? 'show' : ''}`}
         style={{
           transition: 'opacity 1s ease, transform 1s ease',
@@ -32,9 +86,11 @@ function App() {
           transform: showTitle ? 'scale(1)' : 'scale(0.5)',
         }}
       >
-        Welcome to
-      </h1>
-      <h1
+        <h1 className="glitch"
+        data-text="Welcome to">Welcome to</h1>
+      </div>
+
+      <div
         className={`title ${showTitle ? 'show' : ''}`}
         style={{
           transition: 'opacity 3s ease, transform 1s ease',
@@ -42,19 +98,11 @@ function App() {
           transform: showTitle ? 'scale(1)' : 'scale(0.5)',
         }}
       >
-        ByteBuck!
-      </h1>
-
-
-      <AnimatedComponent>
-      <OpenWalletButton/>
-
-
-      </AnimatedComponent>
-    </div>
-  );
-}
-
+        <h1>
+        <span className="glitch" data-text="ByteBuck!">ByteBuck!</span>
+        </h1>
+        
+      </div> */}
       /* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
