@@ -54,6 +54,10 @@
   height: 100%; 
 }
 
+.Balance-Container {
+    padding-top: 10px;
+}
+
 .content-item {
   margin: 0.5em; /* Add spacing between stacked items */
 }

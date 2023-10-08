@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 // Custom imports
 const config = require('./utils/config');
 const authRoutes = require('./routes/auth');
-
+const balanceRoutes = require('./routes/balance');
+const dataRoutes = require('./routes/userdata')
 const app = express()
 
 mongoose.set('strictQuery', false)
@@ -25,5 +26,7 @@ app.use(express.json()); // For parsing JSON requests
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api', balanceRoutes);
+app.use('/api', dataRoutes);
 
 module.exports = app

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import authService from '../../services/auth.service';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [formData, setFormData] = useState({
         email: '',
         password: '',
     });
+
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -22,6 +25,7 @@ const Register = () => {
         try {
             const response = await authService.register(formData.email, formData.password);
             console.log(response);  // handle response as needed
+            navigate('/'); // Redirect to wallet page
         } catch (error) {
             console.error('Registration failed', error);
         }
