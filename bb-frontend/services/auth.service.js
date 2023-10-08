@@ -12,26 +12,9 @@ class AuthService {
             return response.data;
         } catch (error) {
             console.error('There was an error!', error);
+            console.error('Error details', error.response?.data); // Add this line to log the error response from the server
+            throw error; // This will allow you to catch this error where you call this method and handle accordingly
         }
-    }
-
-    async login(email, password) {
-        try {
-            const response = await axios.post(API_URL + 'login', {
-                email,
-                password,
-            });
-            if (response.data.token) {
-                localStorage.setItem('user', JSON.stringify(response.data));
-            }
-            return response.data;
-        } catch (error) {
-            console.error('There was an error!', error);
-        }
-    }
-
-    logout() {
-        localStorage.removeItem('user');
     }
 }
 

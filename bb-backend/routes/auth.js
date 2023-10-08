@@ -6,8 +6,6 @@ const {
 	PrivateKey,
 	Client,
 	TokenCreateTransaction,
-	TokenType,
-	TokenSupplyType,
 	TransferTransaction,
 	AccountBalanceQuery,
 	TokenAssociateTransaction,
@@ -22,12 +20,11 @@ const router = express.Router();
 
 router.post('/register', async (req, res) => {
     const { email, password } = req.body;
+    console.log(req.body);
 
     try {
         const existingUser = await User.findOne({ email });
         if (existingUser) return res.status(400).send('User already exists');
-
-        const hashedPassword = await bcrypt.hash(password, 10);
 
         const client = Client.forTestnet();
         client.setOperator(config.ACCOUNT_ID, config.PRIVATE_KEY);
@@ -99,7 +96,7 @@ router.post('/register', async (req, res) => {
 
         const user = new User({
             email,
-            password: hashedPassword,
+            password: password,
             accountId: newAccountId.toString(),
             byteBucks: balanceCheckTx.tokens._map.get(tokenId.toString())
         });
@@ -109,27 +106,29 @@ router.post('/register', async (req, res) => {
         res.status(201).send('User registered successfully');
     } catch (error) {
         console.error(error);
-        res.status(500).send('Server Error');
+        res.status(500).json({ error: error.message }); // Send error message to frontend
     }
 });
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    try {
-        const user = await User.findOne({ email });
-        if (!user) return res.status(400).send('Invalid credentials');
+    const user = await User.findOne({ email });
+    console.log('Stored Hashed Password:', user.password);  // Log stored hashed password
 
-        const validPassword = await bcrypt.compare(password, user.password);
-        if (!validPassword) return res.status(400).send('Invalid credentials');
-
-        const token = jwt.sign({ _id: user._id }, config.JWT_SECRET);
-
-        res.json({ token, accountId: user.accountId });
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Server Error');
+    if (!user) {
+      return res.status(400).json({ error: 'Invalid email or password' });
     }
+  
+    const validPassword = await bcrypt.compare(password, user.password);
+    console.log("Password validation result:", validPassword); // Verifies saved password and entered password are same
+
+    if (!validPassword) {
+      return res.status(400).json({ error: 'Invalid email or password' });
+    }
+  
+    const token = jwt.sign({ _id: user._id }, config.JWT_SECRET);
+    res.json({ token, email: user.email });
 });
 
 module.exports = router;
