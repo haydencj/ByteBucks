@@ -1,8 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import AnimatedComponent from '../components/AnimatedComponent';
-import TypeIt from "typeit-react";
-import { BrowserRouter as Router, Routes,Route, Link } from 'react-router-dom';
 import SignInButton from '../components/SignInButton';
 
 function Home() {
@@ -20,9 +18,15 @@ function Home() {
     };
     }, []); // Empty dependency array to run the effect only once
 
+<<<<<<< HEAD
     const SuperStrong = ({ children }) => {
         return <strong style={{ fontSize: "70px", className:"glitch" }}>{children}</strong>;
     };
+=======
+  const SuperStrong = ({ children }) => {
+    return <strong style={{ fontSize: "70px", className:"glitch",color:"black" }}>{children}</strong>;
+  };
+>>>>>>> origin/experimental
 
     return (
         <div className="app-container">
@@ -54,6 +58,7 @@ function Home() {
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <div className="content-item">
                         <div className="text-field">
                             <label htmlFor="password">Password:</label>
@@ -69,5 +74,54 @@ function Home() {
 
         </div>
     );
+=======
+    <AnimatedComponent>
+    <div className="logo">
+        <a href="https://devpost.com/software/bytebucks" target="_blank">
+          <img src={'/BB_Logo.png'} className="logo" alt="ByteBucks Logo" />
+        </a>
+      </div>
+      </AnimatedComponent>
+      
+      <div className="content">
+
+        <div className="content-item">
+        <SuperStrong>Welcome to
+          ByteBucks
+        </SuperStrong>
+      </div>
+
+    
+      <div className="content-item">
+    <div className="text-field">
+        <input type="text" id="username" name="username" placeholder="Username"/>
+      </div>
+      </div>
+      <div className="content-item">
+      <div className="text-field">
+        <input type="password" id="password" name="password" placeholder="Password" />
+      </div>
+      </div>
+
+      <div className="content-item">
+      <SignInButton/>
+      </div>
+
+      <div className="signUp">
+      <a href="http://localhost:5177/pages/Wallet" target="_blank">
+          <h2>Don't have an account?</h2>
+        </a>
+      </div>
+
+     </div>
+     
+    </div>
+
+
+
+
+
+  );
+>>>>>>> origin/experimental
 }
 export default Home;

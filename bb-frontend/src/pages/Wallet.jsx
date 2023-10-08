@@ -1,11 +1,16 @@
 import React from 'react';
+import TypeIt from 'typeit-react';
 
 function Wallet() {
   return (
-    <div>
-      <h1>My Wallet</h1>
-      <p>Your wallet balance: 500 ByteBucks</p>
-      {/* You can add more wallet-related information and functionality here */}
+    <div className="Wallet-container">
+        <div className="card">     
+            <TypeIt className="Balance">ByteBucks Balance:</TypeIt>
+           
+         <div className="Balance Container"/>
+            
+        </div>
+
     </div>
   );
 }

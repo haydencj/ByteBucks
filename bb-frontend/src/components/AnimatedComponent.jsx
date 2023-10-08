@@ -6,7 +6,7 @@ function AnimatedComponent({ children }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowComponent(true);
-    }, 3000);
+    }, 750);
 
     return () => {
       clearTimeout(timer);
