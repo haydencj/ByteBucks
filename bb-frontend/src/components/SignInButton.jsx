@@ -10,11 +10,7 @@ function SignInButton() {
         <button>
             Sign In</button></a>
 
-    return (
-        <a href="#"style={{backgroundColor: "green"}} onClick={handleLoginClick}>
-            <button>Sign In</button>
-        </a>
-    );
+  );
 }
 
 export default SignInButton;

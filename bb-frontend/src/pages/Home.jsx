@@ -1,80 +1,32 @@
-
 import React, { useState, useEffect } from 'react';
 import AnimatedComponent from '../components/AnimatedComponent';
 import SignInButton from '../components/SignInButton';
 
 function Home() {
-    const [showTitle, setShowTitle] = useState(false);
+  const [showTitle, setShowTitle] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     // Use setTimeout to delay showing the title
     const timer = setTimeout(() => {
-        setShowTitle(true);
+      setShowTitle(true);
     }, 1500);
 
     // Clear the timer when the component unmounts
     return () => {
-        clearTimeout(timer);
+      clearTimeout(timer);
     };
-    }, []); // Empty dependency array to run the effect only once
+  }, []); // Empty dependency array to run the effect only once
 
-<<<<<<< HEAD
-    const SuperStrong = ({ children }) => {
-        return <strong style={{ fontSize: "70px", className:"glitch" }}>{children}</strong>;
-    };
-=======
   const SuperStrong = ({ children }) => {
     return <strong style={{ fontSize: "70px", className:"glitch",color:"black" }}>{children}</strong>;
   };
->>>>>>> origin/experimental
 
-    return (
-        <div className="app-container">
-            
-            {/* Logo container */}
-            <AnimatedComponent>
-                <div className="logo">
-                    <a href="https://devpost.com/software/bytebucks" target="_blank">
-                    <img src={'/BB_Logo.png'} className="logo" alt="ByteBucks Logo" />
-                    </a>
-                </div>
-            </AnimatedComponent>
-            
-            {/* Welcome to ByteBucks and login fields */}
-            <div className="content">
-                <div className="content-item">
-                <TypeIt>
-                    <SuperStrong>Welcome to
-                    ByteBucks.
-                    </SuperStrong>
-                </TypeIt>
-                </div>
+  return (
 
-                <AnimatedComponent>
-                    <div className="content-item">
-                        <div className="text-field">
-                            <label htmlFor="username">Username:</label>
-                            <input type="text" id="username" name="username" />
-                        </div>
-                    </div>
 
-<<<<<<< HEAD
-                    <div className="content-item">
-                        <div className="text-field">
-                            <label htmlFor="password">Password:</label>
-                            <input type="password" id="password" name="password" />
-                        </div>
-                    </div>
 
-                    <div className="content-item">
-                        <SignInButton/>
-                    </div>
-                </AnimatedComponent>
-            </div>
+    <div className="app-container">
 
-        </div>
-    );
-=======
     <AnimatedComponent>
     <div className="logo">
         <a href="https://devpost.com/software/bytebucks" target="_blank">
@@ -82,7 +34,7 @@ function Home() {
         </a>
       </div>
       </AnimatedComponent>
-      
+
       <div className="content">
 
         <div className="content-item">
@@ -91,7 +43,7 @@ function Home() {
         </SuperStrong>
       </div>
 
-    
+
       <div className="content-item">
     <div className="text-field">
         <input type="text" id="username" name="username" placeholder="Username"/>
@@ -108,13 +60,13 @@ function Home() {
       </div>
 
       <div className="signUp">
-      <a href="http://localhost:5177/pages/Wallet" target="_blank">
+      <a href="http://localhost:5173/pages/Wallet" target="_blank">
           <h2>Don't have an account?</h2>
         </a>
       </div>
 
      </div>
-     
+
     </div>
 
 
@@ -122,6 +74,5 @@ function Home() {
 
 
   );
->>>>>>> origin/experimental
 }
 export default Home;
