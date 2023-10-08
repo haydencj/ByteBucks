@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LoginButton from '../components/LoginButton';
+import TypeIt from 'typeit-react';
 
 function Home() {
     const [email, setEmail] = useState('');
@@ -68,8 +69,29 @@ function Home() {
                         <h2>Don't have an account?</h2>
                     </a>
                 </div>
+
+                {/* Adding TypeIt footer */}
+                <div
+                    className="footer-container"
+                    style={{
+                        bottom: 0,
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: 'white',
+                        color: 'black'
+                    }}>
+                    <TypeIt
+                        options={{
+                            strings: 'Wanna be a Bucking Billionaire?',
+                            speed: 50,
+                            loop: true
+                        }}
+                    />
+                </div>
             </div>
-        </div>
+        </div >
     );
 }
 export default Home;
