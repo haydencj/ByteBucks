@@ -27,13 +27,11 @@ function Home() {
 
     <div className="app-container">
 
-    <AnimatedComponent>
     <div className="logo">
         <a href="https://devpost.com/software/bytebucks" target="_blank">
           <img src={'/BB_Logo.png'} className="logo" alt="ByteBucks Logo" />
         </a>
       </div>
-      </AnimatedComponent>
 
       <div className="content">
 
@@ -60,7 +58,7 @@ function Home() {
       </div>
 
       <div className="signUp">
-      <a href="http://localhost:5173/pages/Wallet" target="_blank">
+      <a href="http://localhost:5173/registration" target="_blank">
           <h2>Don't have an account?</h2>
         </a>
       </div>

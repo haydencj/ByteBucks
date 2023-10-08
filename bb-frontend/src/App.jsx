@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-=======
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import React, { useState, useEffect, Component } from 'react';
->>>>>>> origin/experimental
 import './App.css'
 import { BrowserRouter, Router, Routes,Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
@@ -11,38 +6,24 @@ import Wallet from './pages/Wallet';
 import Register from './components/Register';
 
 function App() {
-<<<<<<< HEAD
-    return(
-        <div>
-            <BrowserRouter>
-                <Routes>
-                    <Route index element={<Home />} />
-                    <Route path='/registration' element={<Register />}/>
-                    <Route path='/wallet' element={<Wallet />} />
-                </Routes>
-            </BrowserRouter>
-        </div>
-    );
-}
-
-=======
 
 
   return(
     <div>
 
 
-    <BrowserRouter>
-        <Routes>
-            <Route index element={<Home />} />
-            <Route path='/pages/Wallet' element={<Wallet />} />
-         
-        </Routes>
-    </BrowserRouter>
+        <BrowserRouter>
+            <Routes>
+                <Route index element={<Home />} />
+                <Route path='/wallet' element={<Wallet />} />
+                <Route path='/registration' element={<Register />} />
+
+            </Routes>
+        </BrowserRouter>
 
 
 
-</div>
+    </div>
   );
 }
 
@@ -95,6 +76,5 @@ function App() {
         Click on the Vite and React logos to learn more
       </p> */
 
->>>>>>> origin/experimental
 export default App;
 
