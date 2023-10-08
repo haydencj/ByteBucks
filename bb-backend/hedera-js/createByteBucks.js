@@ -4,7 +4,8 @@ const {
     TokenCreateTransaction, 
     PrivateKey, 
     Hbar,
-    TokenSupplyType
+    TokenSupplyType,
+    TokenType
 } = require("@hashgraph/sdk");
 
 require("dotenv").config();
@@ -35,6 +36,7 @@ async function createByteBucks() {
     const transactionId = await new TokenCreateTransaction()
         .setTokenName("ByteBuck")
         .setTokenSymbol("BB")
+        .setTokenType(TokenType.FungibleCommon)
         .setDecimals(0) // Set the divisibility of the token. 
         .setInitialSupply(10000) // Set the initial supply of ByteBucks
         .setTreasuryAccountId(myAccountId) // Set the account ID that will act as the treasury
