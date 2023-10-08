@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import './App.css'
-import AnimatedComponent from './components/AnimatedComponent';
-import TypeIt from "typeit-react";
 import { BrowserRouter, Router, Routes,Route, Link } from 'react-router-dom';
-import SignInButton from './components/SignInButton';
 import Home from './pages/Home';
 import Wallet from './pages/Wallet';
+import Register from './components/Register';
+import Redeem from './pages/Redeem';
 
 function App() {
 
@@ -14,18 +13,15 @@ function App() {
     <div>
 
 
-    <BrowserRouter>
-        <Routes>
-            <Route index element={<Home />} />
-            <Route path='/wallet' element={<Wallet />} />
-            <Route path='/registration' element={<Registration />} />
-         
-        </Routes>
-    </BrowserRouter>
-
-
-
-</div>
+        <BrowserRouter>
+            <Routes>
+                <Route index element={<Home />} />
+                <Route path='/wallet' element={<Wallet />} />
+                <Route path='/registration' element={<Register />} />
+                <Route path='/redeem' element={<Redeem />} />
+            </Routes>
+        </BrowserRouter>
+    </div>
   );
 }
 

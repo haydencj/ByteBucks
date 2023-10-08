@@ -41,6 +41,11 @@ h1 {
   line-height:12px;
 }
 
+.Register{
+  color:black;
+  font-size:3em;
+}
+
 /* Styling for text fields */
 
 
@@ -52,7 +57,8 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
 
   width: 50%; /* Full width input fields */
   padding: 10px; /* Padding inside input fields */
@@ -61,13 +67,15 @@ input[type="password"] {
   font-size: 18px; /* Font size */
   color: rgb(0, 0, 0); /* Text color */
   outline: none; /* Remove outline on focus */
-  border-radius:15px;
   border-radius:30px;
+  margin:5px;
+
 }
 
 /* Focus effect */
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:focus {
   border-color: #222422; /* Darker green on focus */
   box-shadow: 0 0 5px rgba(68, 160, 73, 0.7); /* Box shadow on focus */
 }
@@ -86,7 +94,29 @@ button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
   transition: background-color 0.3s ease; 
   border-radius:10px;
+  display:block;
+  margin-left:250px;
+  margin-top:10px;
 }
+
+.button2{
+  background-color: #ffffff; /* Green background color */
+  color: rgb(0, 0, 0); /* White text color */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Letter spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
+  transition: background-color 0.3s ease; 
+  border-radius:10px;
+  display:block;
+  margin-left:300px;
+  margin-top:10px;
+}
+
 
 .signUp{
   margin-top:3em;
@@ -101,18 +131,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
 
 /*Add "glitch" class and data-text to your html element
 Ex:

@@ -23,5 +23,5 @@ async function getTokenInfo(tokenIdString) {
 }
 
 // Replace '0.0.1234' with your actual Token ID string
-getTokenInfo('0.0.4512444').catch(console.error);
+getTokenInfo('0.0.4518091').catch(console.error);
 

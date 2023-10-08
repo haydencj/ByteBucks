@@ -22,9 +22,8 @@ mongoose.connect(config.MONGODB_URI)
 // Middlewares
 app.use(cors()); // Handle CORS issues
 app.use(express.json()); // For parsing JSON requests
-app.use('/api/auth', authRoutes);
 
 // Routes
-
+app.use('/api/auth', authRoutes);
 
 module.exports = app

@@ -3,7 +3,7 @@ import { Link,Router } from 'react-router-dom';
 
 function SignInButton() {
     const handleLoginClick = () => {
-        window.location.href = "http://localhost:5177/pages/Wallet"; // Redirect to Flask login route
+        window.location.href = "http://localhost:5173/wallet"; // Redirect to Flask login route
     };
   return (
     <a href="#"style={{}} onClick={handleLoginClick}>
