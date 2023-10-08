@@ -35,6 +35,7 @@ const Register = () => {
         <>
         <div>
             <h1 className="Register">Register a ByteBucks Account</h1>
+            <p style = {{color: 'black', fontWeight: 'bold'}}>Get 10 free BB!</p>
         </div>
         <div className="registerCard">
             <input type="email" name="email" onChange={handleInputChange} placeholder="Email" />
