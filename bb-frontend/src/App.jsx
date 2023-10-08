@@ -19,7 +19,8 @@ function App() {
     <BrowserRouter>
         <Routes>
             <Route index element={<Home />} />
-            <Route path='/pages/Wallet' element={<Wallet />} />
+            <Route path='/wallet' element={<Wallet />} />
+            <Route path='/registration' element={<Registration />} />
          
         </Routes>
     </BrowserRouter>
