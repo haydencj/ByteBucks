@@ -36,7 +36,7 @@
   
   will-change: filter;
   transition: filter 300ms;
-  animation: logo-spin 3s infinite;
+  animation: logo-spin 2s infinite;
   
 }
 
@@ -49,13 +49,25 @@
 
 @keyframes logo-spin {
   from {
-    transform: rotateX(0deg);
+    transform: rotate3d(0deg);
   }
   to {
-    transform: rotateX(360deg);
+    transform: rotate3d(1,1,1,45deg);
+  }
+  to{
+    transform: rotate3d(2,-1,-1,-0.2turn);
+  }
+  to{
+    transform:rotate3d(0,1,0.5,3.142rad);
+  }
+  to{
+    transform:rotate3d(0deg);
   }
 }
-
+.text-field{
+  margin-left:13em;
+  width:12em;
+}
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
