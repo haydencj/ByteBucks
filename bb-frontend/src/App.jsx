@@ -1,6 +1,6 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import './App.css'
 import AnimatedComponent from './components/AnimatedComponent';
 import TypeIt from "typeit-react";
@@ -10,8 +10,12 @@ import Home from './pages/Home';
 import Wallet from './pages/Wallet';
 
 function App() {
+
+
   return(
     <div>
+
+
     <BrowserRouter>
         <Routes>
             <Route index element={<Home />} />
@@ -19,9 +23,14 @@ function App() {
          
         </Routes>
     </BrowserRouter>
+
+
+
 </div>
   );
 }
+
+
 
 
 {/* <div

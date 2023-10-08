@@ -1,8 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import AnimatedComponent from '../components/AnimatedComponent';
-import TypeIt from "typeit-react";
-import { BrowserRouter as Router, Routes,Route, Link } from 'react-router-dom';
 import SignInButton from '../components/SignInButton';
 
 function Home() {
@@ -21,7 +19,7 @@ function Home() {
   }, []); // Empty dependency array to run the effect only once
 
   const SuperStrong = ({ children }) => {
-    return <strong style={{ fontSize: "70px", className:"glitch" }}>{children}</strong>;
+    return <strong style={{ fontSize: "70px", className:"glitch",color:"black" }}>{children}</strong>;
   };
 
   return (
@@ -30,8 +28,8 @@ function Home() {
     
     <div className="app-container">
 
-<AnimatedComponent>
-<div className="logo">
+    <AnimatedComponent>
+    <div className="logo">
         <a href="https://devpost.com/software/bytebucks" target="_blank">
           <img src={'/BB_Logo.png'} className="logo" alt="ByteBucks Logo" />
         </a>
@@ -41,33 +39,32 @@ function Home() {
       <div className="content">
 
         <div className="content-item">
-      <TypeIt>
         <SuperStrong>Welcome to
-          ByteBucks.
+          ByteBucks
         </SuperStrong>
-      </TypeIt>
       </div>
 
-      
-        
-    <AnimatedComponent>
+    
       <div className="content-item">
     <div className="text-field">
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" name="username" />
+        <input type="text" id="username" name="username" placeholder="Username"/>
       </div>
       </div>
       <div className="content-item">
       <div className="text-field">
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" />
+        <input type="password" id="password" name="password" placeholder="Password" />
       </div>
       </div>
+
       <div className="content-item">
       <SignInButton/>
       </div>
-      </AnimatedComponent>
-     {/* <Login/> */}
+
+      <div className="signUp">
+      <a href="http://localhost:5177/pages/Wallet" target="_blank">
+          <h2>Don't have an account?</h2>
+        </a>
+      </div>
 
      </div>
      

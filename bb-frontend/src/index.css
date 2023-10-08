@@ -3,9 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #96ba8e;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,14 +12,19 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+.Balance{
+  color:white;
+  font-size: 3em;
+  line-height:12px;
+  font:bold;
+}
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #050508;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #70bf7e;
 }
 
 body {
@@ -32,43 +36,45 @@ body {
 }
 
 h1 {
-  font-size: 6em;
-  line-height: 1.1;
+  color:white;
+  font-size: 3em;
+  line-height:12px;
 }
 
 /* Styling for text fields */
-.text-field {
-  margin-bottom: 15px; /* Spacing between text fields */
-}
+
 
 label {
   display: block; /* Make labels block-level elements */
-  color: #4CAF50; /* Green text color for labels */
+  color: #ffffff; /* Green text color for labels */
   font-weight: bold; /* Bold label text */
   margin-bottom: 5px; /* Spacing between label and input */
 }
 
 input[type="text"],
 input[type="password"] {
-  width: 100%; /* Full width input fields */
+
+  width: 50%; /* Full width input fields */
   padding: 10px; /* Padding inside input fields */
-  border: 2px solid #4CAF50; /* Green border */
+  border: 2px solid #000000; /* Green border */
   border-radius: 5px; /* Rounded corners */
   font-size: 18px; /* Font size */
-  color: rgb(239, 239, 239); /* Text color */
+  color: rgb(0, 0, 0); /* Text color */
   outline: none; /* Remove outline on focus */
+  border-radius:15px;
+  border-radius:30px;
 }
 
 /* Focus effect */
 input[type="text"]:focus,
 input[type="password"]:focus {
-  border-color: #45a049; /* Darker green on focus */
+  border-color: #222422; /* Darker green on focus */
   box-shadow: 0 0 5px rgba(68, 160, 73, 0.7); /* Box shadow on focus */
 }
 
 
 button {
-  background-color: #4CAF50; /* Green background color */
+  background-color: #050505; /* Green background color */
   color: white; /* White text color */
   padding: 10px 20px; /* Padding around the text */
   border: none; /* Remove border */
@@ -79,8 +85,13 @@ button {
   letter-spacing: 1px; /* Letter spacing */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
   transition: background-color 0.3s ease; 
+  border-radius:10px;
 }
 
+.signUp{
+  margin-top:3em;
+  color:black;
+}
 
 button:hover {
   border-color: #68a98c;
